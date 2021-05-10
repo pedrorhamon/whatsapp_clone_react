@@ -1,6 +1,10 @@
 import React from 'react';
 import './App.css';
 
+import DonutLargeIcon from '@material-ui/icons/DonutLarge';
+import ChatIcon from '@material-ui/icons/Chat';
+import MoreVertIcon from '@material-ui/icons/MoreVert';
+
 export default  () => {
   return (
     <div className="app-window">
@@ -9,6 +13,15 @@ export default  () => {
           <header>
             <img className="header-avatar" src="https://image.freepik.com/vetores-gratis/perfil-de-avatar-de-homem-no-icone-redondo_24640-14044.jpg" alt=""/>
             <div className="header-buttons">
+              <div className="header-btn">
+                  <DonutLargeIcon style = {{color: '#919191'}}/>
+              </div>
+              <div className="header-btn">
+                  <ChatIcon style = {{color: '#919191'}}/>
+              </div>
+              <div className="header-btn">
+                  <MoreVertIcon style = {{color: '#919191'}}/>
+              </div>
             </div>
           </header>
 
