@@ -1,12 +1,17 @@
-import React from 'react';
+import React, {useState, useEffect}  from 'react';
 import './App.css';
+
 
 import DonutLargeIcon from '@material-ui/icons/DonutLarge';
 import ChatIcon from '@material-ui/icons/Chat';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import SearchIcon from '@material-ui/icons/Search';
+import chatListItem from './components/chatListItem';
 
 export default  () => {
+
+  const [chatlist, setChatList] = useState([{},{},{},{},{},{},{},{},{},{}]);
+
   return (
     <div className="app-window">
       <div className="sidebar">
@@ -33,9 +38,14 @@ export default  () => {
             </div>
           </div>
 
-          <div className= "chatlist">
-            -----
-          </div>
+        <div className="chatlist">
+          {chatlist.map((item, key)=>(
+            <chatListItem
+            key={key}
+            />
+          ))}
+        </div>
+
     </div>
     <div className="contentarea">
       ----
