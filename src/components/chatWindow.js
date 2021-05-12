@@ -28,6 +28,7 @@ export default () => {
 
               </div> 
           <div className="chatWindow-body"></div> 
+          
           <div className="chatWindow-footer"></div> 
        </div>
     );
