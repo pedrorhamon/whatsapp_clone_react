@@ -8,11 +8,11 @@ import CloseIcon from '@material-ui/icons/Close';
 import SendIcon from '@material-ui/icons/Send';
 import MicIcon from '@material-ui/icons/Mic';
 import EmojiPicker from 'emoji-picker-react';
-import { useState } from 'react';
 
 export default () => {
 
     const [emojiOpen, setEmojiOpen] = useState(false);
+    const [text, setTex] =useState('');
 
     const handleEmojiClick = () => {
 
@@ -68,6 +68,7 @@ export default () => {
 
                 <div className="chatWindow-btn"
                         onClick={handleCloseEmoji}
+                        style={{width: emojiOpen?40:0}}
                 
                 >
                         <CloseIcon style={{ color: '#919191' }} />
@@ -76,7 +77,7 @@ export default () => {
                 <div className="chatWindow-btn"
                         onClick={handleOpenEmoji}
                 >
-                        <InsertEmoticonIcon style={{ color: '#919191' }} />
+                        <InsertEmoticonIcon style={{ color: emojiOpen?'#009688':'#919191' }} />
                     </div>
 
                 </div>
@@ -85,6 +86,8 @@ export default () => {
                      className="chatWindow-input" 
                      type= "text"
                      placeholder="Digite uma mensagem"
+                     value= {text}
+                     onChange={e=>setText(e.target.value)}
                      />
 
                 </div>      
