@@ -7,10 +7,13 @@ import ChatIcon from '@material-ui/icons/Chat';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import SearchIcon from '@material-ui/icons/Search';
 import chatListItem from './components/chatListItem';
+import chatIntro from './components/chatIntro';
+import chatWindow from './components/chatWindow';
 
 export default  () => {
 
-  const [chatlist, setChatList] = useState([{},{},{},{},{},{},{},{},{},{}]);
+  const [chatlist, setChatList] = useState([{chatId: 1, title: 'Pedro', image: "https://image.freepik.com/vetores-gratis/perfil-de-avatar-de-homem-no-icone-redondo_24640-14044.jpg", image: ''}]);
+  const [activeChat, setActiveChat] = useState({});
 
   return (
     <div className="app-window">
@@ -41,14 +44,20 @@ export default  () => {
         <div className="chatlist">
           {chatlist.map((item, key)=>(
             <chatListItem
-            key={key}
+                key={key}
+                onClick={()=>setActiveChat(chatlist[key])}
             />
           ))}
         </div>
 
     </div>
     <div className="contentarea">
-      ----
+           {activeChat.chatId !== undefined &&
+             <chatWindow />
+            }
+            {activeChat.chatId === undefined &&
+              <chatIntro/>
+            } 
       </div>
     </div>
   );
