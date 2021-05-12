@@ -7,8 +7,14 @@ import InsertEmoticonIcon from '@material-ui/icons/InsertEmoticon';
 import CloseIcon from '@material-ui/icons/Close';
 import SendIcon from '@material-ui/icons/Send';
 import MicIcon from '@material-ui/icons/Mic';
+import EmojiPicker from 'emoji-picker-react';
 
 export default () => {
+
+    const handleEmojiClick = () => {
+        
+    }
+
     return (
         <div className="chatWindow">
             <div className="chatWindow-header">
@@ -35,9 +41,21 @@ export default () => {
 
             </div>
 
+            <div className="chatWindow-emojiarea">
+                <EmojiPicker
+                    onEmojiClick={handleEmojiClick}
+                    disableSearchBar
+                    disableSkinTonePicker
+                />
+            </div>
+
             <div className="chatWindow-footer">
 
                 <div className="chatWindow-pre">
+
+                <div className="chatWindow-btn">
+                        <CloseIcon style={{ color: '#919191' }} />
+                    </div>
 
                 <div className="chatWindow-btn">
                         <InsertEmoticonIcon style={{ color: '#919191' }} />
