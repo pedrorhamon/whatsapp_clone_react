@@ -12,7 +12,7 @@ import MicIcon from '@material-ui/icons/Mic';
 import EmojiPicker from 'emoji-picker-react';
 
 
-export default () => {
+export default ({user}) => {
 
     let recognition = null;
     let SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -23,7 +23,11 @@ export default () => {
     const [emojiOpen, setEmojiOpen] = useState(false);
     const [text, setText] =useState('');
     const [ listening, setListening] = useState(false);
-    const [list, setList] = useState([{},{},{}]);
+    const [list, setList] = useState([
+        {author: Pedro, body:'Pi pi pi'},
+        {author: Rhamon, body:'Pi pi pi'},
+        {author: Sousa, body:'Pi pi pi'}
+    ]);
 
     const handleEmojiClick = (e, emojiObject) => {
         setText(text + emojiObject.emoji);

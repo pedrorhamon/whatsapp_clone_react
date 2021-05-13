@@ -14,6 +14,7 @@ export default  () => {
 
   const [chatlist, setChatList] = useState([{chatId: 1, title: 'Pedro', image: "https://image.freepik.com/vetores-gratis/perfil-de-avatar-de-homem-no-icone-redondo_24640-14044.jpg", image: ''}]);
   const [activeChat, setActiveChat] = useState({});
+  const [user, setUser] = useState({});
 
   return (
     <div className="app-window">
@@ -55,7 +56,10 @@ export default  () => {
     </div>
     <div className="contentarea">
            {activeChat.chatId !== undefined &&
-             <chatWindow />
+             <chatWindow 
+              user={user}
+             
+             />
             }
             {activeChat.chatId === undefined &&
               <chatIntro/>
